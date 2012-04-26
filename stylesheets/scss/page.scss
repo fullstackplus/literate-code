@@ -1,0 +1,61 @@
+@import "grid";
+
+/* page structure
+--------------------------------------------- */
+body {background: #fdfdfa;}
+body>header>h1+div.wrapper {border-bottom: 2px solid #eee;}
+
+.wrapper {
+    @include width(16); //1128px
+    margin: 0 auto;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    border: 0px dotted black;
+}
+
+
+body>footer {
+    clear: both;
+    margin: 0 auto;
+    padding: 10px 0 30px 0;
+    background: rgba(0,0,0, .8);
+    color: #fff;
+    border-top: 1px solid red;
+    font-size: 1.3em;
+    font-family: Georgia;
+    text-align: center;
+}
+
+.prose>p, .prose>ul {@include margin-left(5);}
+.prose>ul li {
+    list-style-type: square;
+    margin-left: 24px;
+}
+
+blockquote {
+    float: left;
+    @include width(6);
+    @include margin-left(1);
+    padding: 3px 12px;
+}
+
+article>header {position: relative;}
+
+.toc {
+    padding: 5px;
+    background: #ffe;
+    border: 1px dashed #aaa;
+}
+
+h2 .ttp {
+    float: right;
+    position: relative;
+    top: -5px;
+    a:after {
+        content: '\21E7';
+        font-size: 19px;
+    }
+    a:hover {
+        border-bottom: 0;
+    }
+}

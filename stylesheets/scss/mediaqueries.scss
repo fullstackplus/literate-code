@@ -1,0 +1,141 @@
+@import "grid";
+@import "page";
+
+/*Large screens: width > 1824px
+---------------------------------------------*/
+@media handheld and (min-width: 1824px),
+screen and (min-device-width: 1824px),
+screen and (min-width: 1824px) {
+    .debug p:after {content: "Large screen size: width > 1824px";}
+}
+
+/*Desktops and laptops: 1224px < width < 1824px
+---------------------------------------------*/
+@media handheld and (min-width: 1224px) and (max-width: 1824px),
+screen and (min-device-width: 1224px) and (max-device-width: 1824px),
+screen and (min-width: 1224px) and (max-width: 1824px) {
+    .debug p:after {content: "Desktop size: 1224px < width < 1824px";}
+
+    .toc {
+        position: absolute;
+        @include width(4);
+        @include left(10);
+            ul li em {display: none;}
+    }
+}
+
+@media handheld and (min-width: 1024px) and (max-width: 1224px),
+screen and (min-device-width: 1024px) and (max-device-width: 1224px),
+screen and (min-width: 1024px) and (max-width: 1224px) {
+    .debug p:after {content: "Desktop size: 1024px < width < 1224px";}
+
+     .toc {
+        position: absolute;
+        @include width(4);
+        @include left(10);
+            ul li em {display: none;}
+    }
+}
+
+@media handheld and (min-width: 1024px) and (max-width: 1128px),
+screen and (min-device-width: 1024px) and (max-device-width: 1128px),
+screen and (min-width: 1024px) and (max-width: 1128px) {
+    .debug p:after {content: "Desktop size: 1024px < width < 1128px";}
+
+    .wrapper {@include width(15);}
+    .toc {
+        @include width(4);
+        @include left(10);
+            ul li em {display: none;}
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1056px) {
+    .debug p:after {content: "Desktop size: 1024px < width < 1056px";}
+
+    .wrapper {@include width(14);}
+    .row>*[class^="col"].text {}
+    .row>*[class^="col"].code {@include width(7);}
+    .toc {
+        @include width(4);
+        @include left(10);
+            ul li em {display: none;}
+    }
+}
+
+/*iPads (portrait and landscape: 768px < width < 1024px)
+-------------------------------------------- */
+@media handheld and (min-width: 768px) and (max-width: 1024px),
+screen and (min-device-width: 768px) and (max-device-width: 1024px),
+screen and (min-width: 481px) and (max-width: 1024px) {
+    .debug p:after {content: "Tablet size: 768 < width < 1024px";}
+
+    .wrapper {width: 648px}
+    .row>*[class^="col"].text {@include width(9);}
+    .row>*[class^="col"].code {@include width(9); float: none;}
+
+    .prose {@include width(9);}
+    .prose>p, .prose>ul {@include margin-left(1);}
+    blockquote {margin-left: -12px;}
+
+    .toc {
+        position: static;
+        width: 612px;
+            ul li {
+                float:left;
+                em {display: inline;}
+        }
+    }
+}
+
+/* iPads (landscape)
+-------------------------------------------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
+
+/* iPads (portrait)
+-------------------------------------------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {}
+
+
+/* Smartphones (portrait and landscape: 320px < width < 480px)
+------------------------------------------- */
+@media handheld and (min-device-width: 320px) and (max-device-width: 480px),
+screen and (min-device-width: 320px) and (max-device-width: 480px),
+screen and (min-width: 320px) and (max-width: 480px) {
+    .debug p:after {content: "Mobile size: 320px < width < 480px";}
+
+    .wrapper {width: 432px;}
+    .row>*[class^="col"].text {@include width(6);}
+    .row>*[class^="col"].code {@include width(6); float: none;}
+
+    .prose {@include width(6);}
+    .prose>p, .prose>ul {margin-left: 0;}
+    blockquote {
+        float: none;
+        margin-left: 0;
+        margin-bottom: 26px;
+        padding: 0;
+    }
+    .toc {
+        position: static;
+        width: 396px;
+            ul li {
+                float: left;
+                em {display: inline;}
+            }
+        }
+}
+
+/* Smartphones (landscape)
+------------------------------------------ */
+@media only screen and (min-width: 321px) {}
+
+/* Smartphones (portrait)
+------------------------------------------ */
+@media only screen and (max-width: 320px) {}
+
+.debug {background: #ffe;}
+.debug p {
+    padding: 20px 0;
+    text-align: center;
+}

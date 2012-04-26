@@ -1,0 +1,76 @@
+/* grid
+--------------------------------------------- */
+.row > *[class^="col"] {
+  float: left;
+  margin: 0 12px 13px 12px; }
+
+.col1 {
+  width: 48px; }
+
+.col2 {
+  width: 120px; }
+
+.col3 {
+  width: 192px; }
+
+.col4 {
+  width: 264px; }
+
+.col5 {
+  width: 336px; }
+
+.col6 {
+  width: 408px; }
+
+.col7 {
+  width: 480px; }
+
+.col8 {
+  width: 552px; }
+
+.col9 {
+  width: 624px; }
+
+.col10 {
+  width: 696px; }
+
+.col11 {
+  width: 768px; }
+
+.col12 {
+  width: 840px; }
+
+.col13 {
+  width: 912px; }
+
+.col14 {
+  width: 984px; }
+
+.col15 {
+  width: 1056px; }
+
+.col16 {
+  width: 1128px; }
+
+/* groups with self-clearing floats
+--------------------------------------------- */
+.group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+/* non-textual elements in the fluid grid:
+--------------------------------------------- */
+img, video, object {
+  max-width: 100%; }
+
+/*overrides*/
+.row > *[class^="col"].text {
+  float: none; }
+
+.row > *[class^="col"].code {
+  float: right; }
+
+/*none for tablet size and less*/

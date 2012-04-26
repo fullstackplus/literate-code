@@ -1,0 +1,296 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Problem-solving with Automata-Based Programming
+    %link{:href => "stylesheets/css/screen.css", :media => "screen", :rel => "stylesheet"}/
+    %link{:href => "prettify/google-code-prettify/src/prettify.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "prettify/google-code-prettify/src/prettify.js", :type => "text/javascript"}
+    / <script src='/javascripts/dropcap.js' type='text/javascript'></script>
+  %body{:onload => "prettyPrint()"}
+    / <div class="debug"><p></p></div>
+    %header
+      %h1
+        Literate Code
+        %span &mdash; a responsive prototype for a programming essay
+      .row.group.wrapper
+        %article#intro.col12.prose
+          %p
+            The Computer Science curriculum is a curious thing. On one hand, certain things remain unchanged:
+            the von Neumnann architecture, automata theory, compilation & interpretation, fundamental data
+            structures and algorithms, etc. These are the basic components.
+          %p
+            On the other hand, the day-to-day application of these - software engineering - is evolving at
+            break-neck speed. Software engineering is thrust into the Open Source movement, documented in the
+            developer blogosphere, and is evolving at such speed that makes it hard for any static curriculum
+            to reflect the developments in a timely manner.
+          %blockquote
+            %p
+              The practitioner of literate programming can be regarded as an essayist, whose main concern
+              is with exposition and excellence of style.
+            %footer &mdash;Donald Knuth in Literate Programming
+          %p
+            Consequently, who is better qualified to teach these concepts than the hard-working, experienced
+            programmer / developer? For an expert working in the trenches, the web provides a channel to disseminate
+            his knowledge in real time, with the lowest amount of drag and overhead.
+          %p
+            What merits attention then, is the design, packaging, and distribution of this self-published expert content.
+            Literate Code, the demo for this page, is a prototype of a possible design approach. It features a responsive
+            layout, syntax highlighting through google-code-prettify, and a color scheme and typography defaults meant to
+            facilitate content consumption. It is very minimal, but that's the point; it's a place to start.
+    .wrapper{:role => "main"}
+      %article.group.row{:role => "main"}
+        %header.col7.text
+          %h1
+            %a{:name => "top"}>
+            Problem-solving with Automata-Based Programming
+          .toc.group
+            %h2 Contents
+            %ul
+              %li
+                %a{:href => "#motivation"} Motivation for a character-based text processing script
+                %em /
+              %li
+                %a{:href => "#maybe"} Maybe a solution
+                %em /
+              %li
+                %a{:href => "#automata-based"} Automata-based solution
+                %em /
+              %li
+                %a{:href => "#characteristics"} Characteristics and advantages
+                %em /
+              %li
+                %a{:href => "#resources"} Relevant resources
+        .col7.text
+          %p
+            Recently when working with CSS, I wanted to automate some deployment-related tasks: I needed to combine a
+            number of CSS files into a single file; fix image paths from production to deployment values; and strip out
+            the contents from the resultant file. So I wrote a script that I now call each time I move from development
+            to deployment, such when introducing modifications or adding pages to a site.
+          %p
+            While working on the de-commenting part of the script (which was the meat of the task) I researched a
+            style of programming called Automata-Based Programming. I liked this style so much that I'll discuss its
+            characteristics and merits here.
+          %h2
+            Motivation for a character-based text processing script
+            %a{:name => "motivation"}
+            %span.ttp
+              %a{:href => "#top"}
+          %p
+            I wanted to achieve the de-commenting in a single pass, producing an output CSS file without modifying my input
+            file. (I also didn't want to resort to regular expressions immediately, wanting to develop a more fine-grained,
+            character-based approach. My assumption was that a file should be processed as a stream rather than a large string).
+          %h2
+            Maybe a solution
+            %a{:name => "maybe"}
+            %span.ttp
+              %a{:href => "#top"}
+          %p
+            At first, I pondered the naive, character-for-character procedural approach, something along the lines of,
+            in pseudocode:
+        .col8.code
+          %pre
+            %code
+              :preserve
+                
+                inside_comment = false
+                while not end_of_file do
+                  one = getchar
+                  two = getchar
+                  if not inside_comment and one =='/' and two =='*'
+                    inside_comment = true
+                  else
+                    if not inside_comment print one, two
+                  if inside_comment
+                    if one =='*' and two =='/'
+                      inside_comment = false
+                    else
+                      one = getchar
+                      two = getchar
+                      if one =='*' and two =='/'
+                        inside_comment = false
+                                            .col7.text
+          %p
+            This was bound to build up to a crescendo of nested "if"s and "while"s. There is massive duplication with calls
+            to getchar, as well as referencing and setting inside_comment. More importantly, this code builds on the assumption
+            that the number of characters preceding the start of a comment is divisible by two. If this number is not even, the
+            solution would fail and it would take additional conditional branching to make it work. All in all, a brittle,
+            hardly readable solution open to not-so-subtle logical flaws.
+          %p
+            Next, I considered using a string library to help out with pattern-matching. I had seen the
+            %code StringScanner
+            class be used for parsing JSON, so I considered going the same route and use
+            %code StringScanner#scan
+            to move through
+            the string finding comments. However all that seemed to be was using a library to find occurrences of
+            %code /*
+            and
+            = succeed "." do
+              %code */
+            It was all about these two combinations of these two characters. No nested structures, no recursion,
+            no well-formed language constructs. No grammar to validate against. This realization made relying on a library look
+            rather redundant.
+          %blockquote
+            %p
+              Pragmaitic Programmers manipulate text the same way woodworkers shape wood.
+            %footer
+              \&mdash;Andy Hunt & Dave Thomas in
+              %a{:href => "http://pragprog.com/the-pragmatic-programmer"} The Pragmatic Programmer
+          %p
+            So I decided to go with the most raw approach - processing the CSS character-by-character. I visualized an auxiliary
+            data structure as an intermediate destination for the characters on the way from the source file to the target file.
+            This data structure would act like a valve, letting characters through when there was no comment and closing when
+            there was. When the end of the comment was detected, the data structure would be cleared (the comment deleted) and the
+            process would resume until end of file was reached.
+          %h2
+            Automata-based solution
+            %a{:name => "automata-based"}
+            %span.ttp
+              %a{:href => "#top"}
+          %p
+            In essence, this would be a queue with some helper methods for analyzing the top two characters. The Ruby
+            %code Array
+            class, with it's
+            %code #shift
+            method, provided a foundation for that data structure.
+          %p
+            What this allowed me to do is to create a linear structure for my program with only one while loop (the outermost loop
+            that reads in characters as long as there are more). This is one of the characteristics of Automata-Based Programming:
+            only the outermost loop is needed and it is used to read in input from start to end.
+        .col8.code
+          %pre.prettyprint
+            %code
+              :preserve
+                
+                def process(char)
+                    add(char)
+                    @comment = true if comment_start
+                    @comment = false if comment_end
+                    c = filter
+                    c unless c.nil?
+                end
+                                        .col7.text
+          %p
+            With each step of the program (which adds a character to the data structure) I check for a presence of a comment based
+            on what the top 2 characters on the queue are (the values I'm interested in are
+            %code /*
+            and
+            = succeed ")." do
+              %code */
+            An instance variable
+            %code @comment
+            is then modified accordingly.
+          %p
+            Based on a subset of all possible values of these three factors (
+            %code> comment_start
+            ,
+            = succeed "," do
+              %code comment_end
+            and
+            = succeed ")," do
+              %code @comment
+            one of the following three steps is executed:
+          %ul
+            %li Dequeue the first character to the output (we have just entered a comment);
+            %li Clear the stack (we have reached the end of a comment);
+            %li Dequeue the first character to the output (no comment in sight).
+        .col8.code
+          %pre.prettyprint
+            %code
+              :preserve
+                
+                def filter
+                    return get_first if ready and comment_start #["c", "/", "*"] - pop "c"
+                    clear if comment_end #["/", "*", "a", "b", "c", "*", "/"]
+                    get_first if ready and !comment #["a", "b", "c"] or ["b", "c", "/"]
+                end
+                                            .col7.text
+          %p
+            Here, we have another characteristic of Automata-Based Programming: with each step of the program (here, it is adding a
+            character to the queue) we query and / or modify the the program's "state". ("State" is the value of a set of variables
+            at a particular step of the program). When the program continues, it encounters a set of directives. From this set, a
+            directive will be executed depending on whether or not it satisfies a this state. This has the effect of "flattening out"
+            the program's logical branches to several conditional statements that often all appear at the same level, almost assembly
+            language-like.
+          %p
+            (
+            %a{:href => "https://github.com/abbottjam/rapidui/blob/master/css/css_manager/css_manager.rb", :title => "css_manager.rb on GitHub"}> Here is the complete program on GitHub
+            ).
+          %h2
+            Characteristics and advantages
+            %a{:name => "characteristics"}
+            %span.ttp
+              %a{:href => "#top"}
+          %p
+            I find that Automata-Based Programming is very useful, because it allows me to create a program around logical structures.
+            It makes for programs that are easy to reason about, giving me solid logical anchors to what is happening at each step. This
+            can be seen if we consider the following statements about our helper data structure:
+          %ul
+            %li
+              %strong A preconition for querying the state of the queue:
+              The queue must contain at least two characters.
+            %li
+              %strong A precodition for removing the first character of the queue:
+              The queue must contain at least three characters.
+            %li
+              %strong An invariant for the queue:
+              When we are not inside a comment the queue is never longer than 3 characters.
+          %p
+            (Specifically, as soon as I had the formulation of the above invariant and the visualization of the queue
+            as a valve was I knew I had the solution to the problem; all that remained was to write the program).
+          %p
+            Programs created in this style are easy to read, a pleasure to write, and are robust in structure, as they
+            build on a formal logical model (A Finite State Machine, or FSM). ABP-style programs allow one to program for
+            correctness and therefore, testability. Beyond clean code, there are other reasons to be proficient in this
+            coding paradigm. Let's list a few of its applications:
+          %p
+            Advanced text processing. The example in this article is very simple, but Finite State Machines are effective
+            at processing text input of varying complexity and structure (markup, programming languages).
+          %p
+            The logic behind Graphical User Interfaces. FSMs are very suited for modeling the interaction of a user with an
+            interface as the components of such an interaction can be expressed as States, Events, and Transitions. For a
+            modern example, consider Alex MacCaw's Super.js -
+            = succeed "." do
+              %a{:href => "https://github.com/maccman/super.js", :title => "Super.js at GitHub"}
+                a modular, jQuery-based JavaScript
+                library for building RIAs
+          %p
+            Moving Object-Oriented programs towards increased explicitness, transparency, and stability. OO programming builds on
+            the notion of objects that possess state at runtime. OO state is less rigorously defined than FSM state, and this has
+            previously led to some
+            = succeed "." do
+              %a{:href => "http://clojure.org/state", :title => "Rich Hickey on State"} criticism of OO-style development
+            In large OO programs, state can become complex, elusive, and hardly verifiable. We can use the Automata-Based style
+            of programming to create Object-Oriented systems that exhibit more explicit and predictable behavior.
+          %h2
+            Relevant resources
+            %a{:name => "resources"}
+            %span.ttp
+              %a{:href => "#top"}
+          %p Some resources on state-based computation and Automata-Based Programming:
+          %p
+            The Wikipedia has a fantastic article with an example of how to transform a character - processing program from
+            imperative style into ABP style:
+            = succeed "." do
+              %a{:href => "http://en.wikipedia.org/wiki/Automata-based_programming", :title => "Automata-Based Programming on Wikipedia"} Automata-Based Programming
+          %p
+            %a{:href => "http://www.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880", :title => "Programming Pearls"}
+              Jon Bentley
+              in Programming Pearls
+            describes the evolution of a program to find the maximal-value subarray in an array of integers.
+            The final solution shows how to combine scanning and state-saving to achieve a very short and fast program. Although it
+            doesn't have explicit State classes or transitions, it works by querying and (re)setting state at each step; I like to
+            think of it as the primordial ABP-style program.
+          %p
+          %footer
+            / date, author, etc
+    %footer
+      %p{:role => "contentinfo"}
+        Hand&ndash;crafted
+        %em for the
+        self&ndash;publishing developer expert.
+        %small
+          %em 2012
+          \&copy; Literate Code
+          %em by
+          James Abbott.

@@ -1,0 +1,344 @@
+/* grid
+--------------------------------------------- */
+.row > *[class^="col"] {
+  float: left;
+  margin: 0 12px 13px 12px; }
+
+.col1 {
+  width: 48px; }
+
+.col2 {
+  width: 120px; }
+
+.col3 {
+  width: 192px; }
+
+.col4 {
+  width: 264px; }
+
+.col5 {
+  width: 336px; }
+
+.col6 {
+  width: 408px; }
+
+.col7 {
+  width: 480px; }
+
+.col8 {
+  width: 552px; }
+
+.col9 {
+  width: 624px; }
+
+.col10 {
+  width: 696px; }
+
+.col11 {
+  width: 768px; }
+
+.col12 {
+  width: 840px; }
+
+.col13 {
+  width: 912px; }
+
+.col14 {
+  width: 984px; }
+
+.col15 {
+  width: 1056px; }
+
+.col16 {
+  width: 1128px; }
+
+/* groups with self-clearing floats
+--------------------------------------------- */
+.group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+/* non-textual elements in the fluid grid:
+--------------------------------------------- */
+img, video, object {
+  max-width: 100%; }
+
+/*overrides*/
+.row > *[class^="col"].text {
+  float: none; }
+
+.row > *[class^="col"].code {
+  float: right; }
+
+/*none for tablet size and less*/
+/* grid
+--------------------------------------------- */
+.row > *[class^="col"] {
+  float: left;
+  margin: 0 12px 13px 12px; }
+
+.col1 {
+  width: 48px; }
+
+.col2 {
+  width: 120px; }
+
+.col3 {
+  width: 192px; }
+
+.col4 {
+  width: 264px; }
+
+.col5 {
+  width: 336px; }
+
+.col6 {
+  width: 408px; }
+
+.col7 {
+  width: 480px; }
+
+.col8 {
+  width: 552px; }
+
+.col9 {
+  width: 624px; }
+
+.col10 {
+  width: 696px; }
+
+.col11 {
+  width: 768px; }
+
+.col12 {
+  width: 840px; }
+
+.col13 {
+  width: 912px; }
+
+.col14 {
+  width: 984px; }
+
+.col15 {
+  width: 1056px; }
+
+.col16 {
+  width: 1128px; }
+
+/* groups with self-clearing floats
+--------------------------------------------- */
+.group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+/* non-textual elements in the fluid grid:
+--------------------------------------------- */
+img, video, object {
+  max-width: 100%; }
+
+/*overrides*/
+.row > *[class^="col"].text {
+  float: none; }
+
+.row > *[class^="col"].code {
+  float: right; }
+
+/*none for tablet size and less*/
+/* page structure
+--------------------------------------------- */
+body {
+  background: #fdfdfa; }
+
+body > header > h1 + div.wrapper {
+  border-bottom: 2px solid #eee; }
+
+.wrapper {
+  width: 1128px;
+  margin: 0 auto;
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  border: 0px dotted black; }
+
+body > footer {
+  clear: both;
+  margin: 0 auto;
+  padding: 10px 0 30px 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-top: 1px solid red;
+  font-size: 1.3em;
+  font-family: Georgia;
+  text-align: center; }
+
+.prose > p, .prose > ul {
+  margin-left: 336px; }
+
+.prose > ul li {
+  list-style-type: square;
+  margin-left: 24px; }
+
+blockquote {
+  float: left;
+  width: 408px;
+  margin-left: 48px;
+  padding: 3px 12px; }
+
+article > header {
+  position: relative; }
+
+.toc {
+  padding: 5px;
+  background: #ffe;
+  border: 1px dashed #aaa; }
+
+h2 .ttp {
+  float: right;
+  position: relative;
+  top: -5px; }
+  h2 .ttp a:after {
+    content: '\21E7';
+    font-size: 19px; }
+  h2 .ttp a:hover {
+    border-bottom: 0; }
+
+/*Large screens: width > 1824px
+---------------------------------------------*/
+@media handheld and (min-width: 1824px), screen and (min-device-width: 1824px), screen and (min-width: 1824px) {
+  .debug p:after {
+    content: "Large screen size: width > 1824px"; } }
+/*Desktops and laptops: 1224px < width < 1824px
+---------------------------------------------*/
+@media handheld and (min-width: 1224px) and (max-width: 1824px), screen and (min-device-width: 1224px) and (max-device-width: 1824px), screen and (min-width: 1224px) and (max-width: 1824px) {
+  .debug p:after {
+    content: "Desktop size: 1224px < width < 1824px"; }
+
+  .toc {
+    position: absolute;
+    width: 264px;
+    left: 696px; }
+    .toc ul li em {
+      display: none; } }
+@media handheld and (min-width: 1024px) and (max-width: 1224px), screen and (min-device-width: 1024px) and (max-device-width: 1224px), screen and (min-width: 1024px) and (max-width: 1224px) {
+  .debug p:after {
+    content: "Desktop size: 1024px < width < 1224px"; }
+
+  .toc {
+    position: absolute;
+    width: 264px;
+    left: 696px; }
+    .toc ul li em {
+      display: none; } }
+@media handheld and (min-width: 1024px) and (max-width: 1128px), screen and (min-device-width: 1024px) and (max-device-width: 1128px), screen and (min-width: 1024px) and (max-width: 1128px) {
+  .debug p:after {
+    content: "Desktop size: 1024px < width < 1128px"; }
+
+  .wrapper {
+    width: 1056px; }
+
+  .toc {
+    width: 264px;
+    left: 696px; }
+    .toc ul li em {
+      display: none; } }
+@media only screen and (min-width: 1024px) and (max-width: 1056px) {
+  .debug p:after {
+    content: "Desktop size: 1024px < width < 1056px"; }
+
+  .wrapper {
+    width: 984px; }
+
+  .row > *[class^="col"].code {
+    width: 480px; }
+
+  .toc {
+    width: 264px;
+    left: 696px; }
+    .toc ul li em {
+      display: none; } }
+/*iPads (portrait and landscape: 768px < width < 1024px)
+-------------------------------------------- */
+@media handheld and (min-width: 768px) and (max-width: 1024px), screen and (min-device-width: 768px) and (max-device-width: 1024px), screen and (min-width: 481px) and (max-width: 1024px) {
+  .debug p:after {
+    content: "Tablet size: 768 < width < 1024px"; }
+
+  .wrapper {
+    width: 648px; }
+
+  .row > *[class^="col"].text {
+    width: 624px; }
+
+  .row > *[class^="col"].code {
+    width: 624px;
+    float: none; }
+
+  .prose {
+    width: 624px; }
+
+  .prose > p, .prose > ul {
+    margin-left: 48px; }
+
+  blockquote {
+    margin-left: -12px; }
+
+  .toc {
+    position: static;
+    width: 612px; }
+    .toc ul li {
+      float: left; }
+      .toc ul li em {
+        display: inline; } }
+/* iPads (landscape)
+-------------------------------------------- */
+/* iPads (portrait)
+-------------------------------------------- */
+/* Smartphones (portrait and landscape: 320px < width < 480px)
+------------------------------------------- */
+@media handheld and (min-device-width: 320px) and (max-device-width: 480px), screen and (min-device-width: 320px) and (max-device-width: 480px), screen and (min-width: 320px) and (max-width: 480px) {
+  .debug p:after {
+    content: "Mobile size: 320px < width < 480px"; }
+
+  .wrapper {
+    width: 432px; }
+
+  .row > *[class^="col"].text {
+    width: 408px; }
+
+  .row > *[class^="col"].code {
+    width: 408px;
+    float: none; }
+
+  .prose {
+    width: 408px; }
+
+  .prose > p, .prose > ul {
+    margin-left: 0; }
+
+  blockquote {
+    float: none;
+    margin-left: 0;
+    margin-bottom: 26px;
+    padding: 0; }
+
+  .toc {
+    position: static;
+    width: 396px; }
+    .toc ul li {
+      float: left; }
+      .toc ul li em {
+        display: inline; } }
+/* Smartphones (landscape)
+------------------------------------------ */
+/* Smartphones (portrait)
+------------------------------------------ */
+.debug {
+  background: #ffe; }
+
+.debug p {
+  padding: 20px 0;
+  text-align: center; }

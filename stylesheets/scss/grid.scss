@@ -1,0 +1,78 @@
+/* grid
+--------------------------------------------- */
+$unit: 12px;
+$measure: 4;
+
+$column: $unit*$measure;
+$side-margin: $unit;
+$gutter: $side-margin*2;
+
+.row>*[class^="col"] {
+    float: left;
+    margin: 0 $side-margin 13px $side-margin;
+}
+
+$col1:   (1*($column + $gutter)-$gutter);
+$col2:   (2*($column + $gutter)-$gutter);
+$col3:   (3*($column + $gutter)-$gutter);
+$col4:   (4*($column + $gutter)-$gutter);
+$col5:   (5*($column + $gutter)-$gutter);
+$col6:   (6*($column + $gutter)-$gutter);
+$col7:   (7*($column + $gutter)-$gutter);
+$col8:   (8*($column + $gutter)-$gutter);
+$col9:   (9*($column + $gutter)-$gutter);
+$col10: (10*($column + $gutter)-$gutter);
+$col11: (11*($column + $gutter)-$gutter);
+$col12: (13*($column + $gutter)-$gutter);
+$col14: (14*($column + $gutter)-$gutter);
+$col15: (15*($column + $gutter)-$gutter);
+$col16: (16*($column + $gutter)-$gutter);
+
+.col1   {width: 1*($column+$gutter)-$gutter;} //48px
+.col2   {width: 2*($column+$gutter)-$gutter;} //120px
+.col3   {width: 3*($column+$gutter)-$gutter;} //192px
+.col4   {width: 4*($column+$gutter)-$gutter;} //264px
+.col5   {width: 5*($column+$gutter)-$gutter;} //336px
+.col6   {width: 6*($column+$gutter)-$gutter;} //408px
+.col7   {width: 7*($column+$gutter)-$gutter;} //480px
+.col8   {width: 8*($column+$gutter)-$gutter;} //552px
+.col9   {width: 9*($column+$gutter)-$gutter;} //624px
+.col10 {width: 10*($column+$gutter)-$gutter;} //696px
+.col11 {width: 11*($column+$gutter)-$gutter;} //768px
+.col12 {width: 12*($column+$gutter)-$gutter;} //840px
+.col13 {width: 13*($column+$gutter)-$gutter;} //912px
+.col14 {width: 14*($column+$gutter)-$gutter;} //984px
+.col15 {width: 15*($column+$gutter)-$gutter;} //1056px
+.col16 {width: 16*($column+$gutter)-$gutter;} //1128px
+
+//Width as function. Usage:
+//.col10 {@include width($cols:13);}
+@mixin width($cols:1) {
+    width: ($cols*($column+$gutter)-$gutter);
+}
+
+@mixin margin-left($cols:1) {
+    margin-left: ($cols*($column+$gutter)-$gutter);
+}
+
+@mixin left($cols:1) {
+    left: ($cols*($column+$gutter)-$gutter);
+}
+
+/* groups with self-clearing floats
+--------------------------------------------- */
+.group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* non-textual elements in the fluid grid:
+--------------------------------------------- */
+img, video, object {max-width: 100%;}
+
+/*overrides*/
+.row>*[class^="col"].text {float:none;}
+.row>*[class^="col"].code {float:right;} /*none for tablet size and less*/
