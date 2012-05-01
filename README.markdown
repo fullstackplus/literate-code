@@ -41,8 +41,10 @@ That’s all, really. Happy blogging.
 
 ##TODO:
 
+In-document links don't work in WebKit browsers. Is this fixable?
 More headline tags ( < h2 )
 Support for responsive images (screenshots) as alternative to HTML code listings
 Line numbering on code listings
 More metadata of the recent kind (itemprop, property, author) for cutting-edge SEO
 More skins with other good color schemes
+
