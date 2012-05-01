@@ -2,30 +2,34 @@
 <html lang='en'>
     <head>
         <meta charset='utf-8'>
-        <title>Literate Code &mdash; a Responsive Prototype for a Programming Essay</title>
+        <title>Literate Code &mdash; a Responsive Prototype for a Programming Essay | Content Template</title>
+        <meta name="description" content="Short Pitch of the Essay (maximum 155 characters, spaces count)" />
+        <meta name="keywords" content="Valuable" />
         <link href='stylesheets/css/screen.css' media='screen' rel='stylesheet'>
         <link href="google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet" />
         <script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
     </head>
-    <body onload="prettyPrint()">
+    <body onload="prettyPrint()"> <!-- loads the JavaScript lexer from the google-code-prettify library -->
         
-        <div role="main" class="wrapper"> <!-- adjust top margin as best fits your page -->
+        <div role="main" class="wrapper"> <!-- adjust top margin as best fits your page design (even better,
+                                               set the bottom margin of the preceding element as a multiple of 13
+                                               to maintain the vertical rhythm) -->
             <article role="main" class="group row">
 
                 <header class="col7 text"> <!-- elements that contain text are tagged with the class "text", whether header, div, etc -->
                     <h1><a name="top"></a>Title of essay</h1>
-                    <div class="toc group">
+                    <div class="toc group"> <!-- tables of content are tagged with "toc" -->
                         <h2>Contents</h2>
                         <ul>
                             <li><a href="#first-subheadline">First subheadline</a><em>/</em></li>
-                            <li><a href="#second-subheadline">Second subheadline</a></li>
+                            <li><a href="#second-subheadline">Second subheadline</a></li> <!-- omit the delimiter on last menu item -->
                         </ul>
                     </div>
                 </header>
                 
                 <div class="col7 text">
                     <p>
-                        Introduction or abstract. The first paragraph will appear in bold font weight.
+                        Introduction or abstract. This first paragraph will appear in bold font weight.
                     </p>
                     <p>
                         <strong>Some text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
