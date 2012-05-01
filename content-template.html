@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Literate Code &mdash; a Responsive Prototype for a Programming Essay</title>
+        <link href='stylesheets/css/screen.css' media='screen' rel='stylesheet'>
+        <link href="google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
+    </head>
+    <body onload="prettyPrint()">
+        
+        <div role="main" class="wrapper"> <!-- adjust top margin as best fits your page -->
+            <article role="main" class="group row">
+
+                <header class="col7 text"> <!-- elements that contain text are tagged with the class "text", whether header, div, etc -->
+                    <h1><a name="top"></a>Title of essay</h1>
+                    <div class="toc group">
+                        <h2>Contents</h2>
+                        <ul>
+                            <li><a href="#first-subheadline">First subheadline</a><em>/</em></li>
+                            <li><a href="#second-subheadline">Second subheadline</a></li>
+                        </ul>
+                    </div>
+                </header>
+                
+                <div class="col7 text">
+                    <p>
+                        Introduction or abstract. The first paragraph will appear in bold font weight.
+                    </p>
+                    <p>
+                        <strong>Some text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Cras libero turpis, feugiat sed scelerisque nec, tempor et justo. Proin et purus sed
+                        lorem elementum posuere interdum quis neque. Proin sagittis diam eu augue dignissim
+                        adipiscing feugiat massa rhoncus. Morbi sagittis, diam euismod ornare mollis, ante arcu
+                        congue enim, eget dictum metus torto vulputate nulla. Etiam feugiat sapien id nibh congue
+                        suscipit. Nam quis nulla dui. Aenean ac lorem risus. Suspendisse volutpat, magna vel
+                        varius tempus, orci dolor gravida purus, et dapibus urna arcu nec turpis.
+                    </p>
+                    <h2>First subheadline<a name="first-subheadline">
+                        </a><span class="ttp"><a href="#top"></a></span>
+                    </h2>
+                    <p>
+                        <strong>Some text that begs to be illustrated in code: </strong>Integer aliquet purus sit
+                        amet ipsum rhoncus sit amet scelerisque felis auctor. Nullam dignissim elit vitae quam
+                        tincidunt scelerisque. Some inline code: <code>@true</code>.
+                    </p>
+                </div> <!-- here, we close the "text" div so that we can float the "code" div to the right of it: -->
+
+                <div class="col8 code"> <!-- elements that contain code are tagged with the class "code" -->
+                    <pre class="prettyprint"><code> <!-- remember class "prettyprint" on code listings -->
+5.times { puts 'Hello Literate Code!' }
+                  </code></pre>
+                </div> <!-- when a "code" div is closed everything just resumes with the next "text" div: -->
+                
+                <div class="col7 text">
+                    <p>
+                        <strong>More on the topic:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras libero turpis, feugiat sed scelerisque nec, tempor et justo. Proin et purus sed
+                        lorem elementum posuere interdum quis neque. Proin sagittis diam eu augue dignissim
+                        adipiscing feugiat massa rhoncus. Morbi sagittis, diam euismod ornare mollis, ante arcu
+                        congue enim, eget dictum metus torto vulputate nulla. Etiam feugiat sapien id nibh congue
+                        suscipit. Nam quis nulla dui. Aenean ac lorem risus. Suspendisse volutpat, magna vel
+                        varius tempus, orci dolor gravida purus, et dapibus urna arcu nec turpis. 
+                    </p>
+                </div>
+                
+                <div class="col7 text">
+                    <h2>Second subheadline<a name="second-subheadline"></a><span class="ttp"><a href="#top"></a></span></h2>
+                        
+                        <blockquote> <!-- quote wisdom like this: -->
+                            <p>
+                                Literate Programming results in better digestion.
+                            </p>
+                            <footer>&mdash;Anonymous on <a href="http://internet.com">The Internet</a></footer>
+                        </blockquote>
+
+                        <p>
+                            <strong>Even more text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Cras libero turpis, feugiat sed scelerisque nec, tempor et justo. Proin et purus sed
+                            lorem elementum posuere interdum quis neque. Proin sagittis diam eu augue dignissim
+                            adipiscing feugiat massa rhoncus. Morbi sagittis, diam euismod ornare mollis, ante arcu
+                            congue enim, eget dictum metus torto vulputate nulla. Etiam feugiat sapien id nibh congue
+                            suscipit. Nam quis nulla dui. Aenean ac lorem risus. Suspendisse volutpat, magna vel
+                            varius tempus, orci dolor gravida purus, et dapibus urna arcu nec turpis.
+                            <span></span> <!-- put an empty "span" at the end of your last paragraph to delimit
+                                               the end of the essay in a tasteful way -->
+                       </p>
+                </div>
+
+            </article>
+        </div>
+        
+    </body>
+</html>
