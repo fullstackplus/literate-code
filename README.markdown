@@ -37,14 +37,15 @@ but here are some key points to keep in mind:
 
   <pre class="prettyprint">
 
-That’s all, really. Happy blogging.
+That’s all, really. Happy blogging. Oh, and don't forget to modify the title and meta tags to suit your site.
 
 ##TODO:
 
 In-document links don't work in WebKit browsers. Is this fixable?
 More headline tags ( < h2 )
 Support for responsive images (screenshots) as alternative to HTML code listings
+HTML5 video & audio support for screencasts & podcasts
 Line numbering on code listings
-More metadata of the recent kind (itemprop, property, author) for cutting-edge SEO
+Stronger semantic metadata (itemprop, property, author) for cutting-edge SEO
 More skins with other good color schemes
 
