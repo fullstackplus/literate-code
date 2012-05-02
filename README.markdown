@@ -31,11 +31,11 @@ but here are some key points to keep in mind:
 7. LC uses <a href="http://code.google.com/p/google-code-prettify/">google-code-prettify</a>
    for syntax highlighting. For it to work, remember to load it in the <code>body</code> element:
 	
-  <code><body onload="prettyPrint()"></code>
+    <body onload="prettyPrint()">
 
   and, to tag the pre / code elements:
 
-  <pre class="prettyprint">
+    <pre class="prettyprint">
 
 That's all, really. Happy blogging. Oh, and don't forget to modify the title and meta tags to suit your site.
 
