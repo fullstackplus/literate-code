@@ -36,7 +36,7 @@ but here are some key points to keep in mind:
 
   and, to tag the pre / code elements:
 
-    <pre class="prettyprint">
+    <code><pre class="prettyprint"></code>
 
 That's all, really. Happy blogging. Oh, and don't forget to modify the title and meta tags to suit your site.
 
