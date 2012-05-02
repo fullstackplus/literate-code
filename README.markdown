@@ -33,7 +33,6 @@ but here are some key points to keep in mind:
 	
     <body onload="prettyPrint()"
 
-
   and, to tag the pre / code elements:
 
     <pre class="prettyprint">
