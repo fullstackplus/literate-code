@@ -32,7 +32,7 @@ but here are some key points to keep in mind:
 7. LC uses <a href="http://code.google.com/p/google-code-prettify/">google-code-prettify</a>
    for syntax highlighting. For it to work, remember to load it in the <code>body</code> element:
 	
-    <body onload="prettyPrint()"
+    <code>body onload="prettyPrint()"</code>
 
   and, to tag the pre / code elements:
 
