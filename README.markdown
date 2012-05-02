@@ -20,6 +20,7 @@ but here are some key points to keep in mind:
 5. As technical essays often draw on quotes from other sources, LC supports nicely formatted block quotations.
    Mark them up like this:
 
+<pre>
 <code>
 <blockquote>
 	<p>
@@ -28,6 +29,7 @@ but here are some key points to keep in mind:
    <footer>&mdash;Anonymous on <a href="http://internet.com">The Internet</a></footer>
 </blockquote>
 </code>
+</pre>
 
 6. A Table of Contents is a <code>div</code> tagged with the class <code>toc"</code>. A good place for it is right after the main essay 		  				title.
 7. LC uses <a href="http://code.google.com/p/google-code-prettify/">google-code-prettify</a>
