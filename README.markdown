@@ -21,11 +21,12 @@ but here are some key points to keep in mind:
    Mark them up like this:
 
     <blockquote>
-	  <p>
-        Literate Programming results in better digestion.
-      </p>
-      <footer>&mdash;Anonymous on <a href="http://internet.com">The Internet</a></footer>
+     <p>
+      Literate Programming results in better digestion.
+     </p>
+     <footer>&mdash;Anonymous on <a href="http://internet.com">The Internet</a></footer>
     </blockquote>
+
 
 6. A Table of Contents is a <code>div</code> tagged with the class <code>toc"</code>. A good place for it is right after the main essay 		  				title.
 7. LC uses <a href="http://code.google.com/p/google-code-prettify/">google-code-prettify</a>
@@ -35,7 +36,7 @@ but here are some key points to keep in mind:
 
   and, to tag the pre / code elements:
 
-	<pre class="prettyprint">
+    <pre class="prettyprint">
 
 That's all, really. Happy blogging. Oh, and don't forget to modify the title and meta tags to suit your site.
 
