@@ -21,12 +21,14 @@ but here are some key points to keep in mind:
    Mark them up like this:
 
 <pre>
+   <code>
     <blockquote>
      <p>
       Literate Programming results in better digestion.
      </p>
      <footer>&mdash;Anonymous on <a href="http://internet.com">The Internet</a></footer>
     </blockquote>
+  </code>
 </pre>
 
 
