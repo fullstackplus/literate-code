@@ -11,12 +11,12 @@ but here are some key points to keep in mind:
 1. Sandbox the CSS in LC from the rest of your site. LC is self-contained in terms of design and if your global 
    stylesheets aren't isolated from the page(s) that use LC your LC styles will get affected via the CSS cascade
    mechanism.
-2. Open content-template.html (included in this repo), view source, read the comments. It’s got all you need.
+2. Open content-template.html (included in this repo), view source, read the comments. It's got all you need.
    Then, just fill in your content.
 3. The two main HTML classes that LC uses on are <code>text</code> and <code>code</code>. Use these to tag 
-    <code>div<code>, <code>section</code>, or <code>p</code> elements to achieve the desired layout. Nest both
+    <code>div</code>, <code>section</code>, or <code>p</code> elements to achieve the desired layout. Nest both
     of these elements at the same level.
-4. Marking up code snippets: <code><code></code> tags for inline, <code><pre> <code></code> for multi-line examples.
+4. Marking up code snippets: <code>code</code> tags for inline, <code>pre code</code> for multi-line examples.
 5. As technical essays often draw on quotes from other sources, LC supports nicely formatted block quotations.
    Mark them up like this:
 
@@ -37,15 +37,15 @@ but here are some key points to keep in mind:
 
   <pre class="prettyprint">
 
-That’s all, really. Happy blogging. Oh, and don't forget to modify the title and meta tags to suit your site.
+That's all, really. Happy blogging. Oh, and don't forget to modify the title and meta tags to suit your site.
 
-##TODO:
+###TODO:
 
-In-document links don't work in WebKit browsers. Is this fixable?
-More headline tags ( < h2 )
-Support for responsive images (screenshots) as alternative to HTML code listings
-HTML5 video & audio support for screencasts & podcasts
-Line numbering on code listings
-Stronger semantic metadata (itemprop, property, author) for cutting-edge SEO
-More skins with other good color schemes
+- In-document links don't work in WebKit browsers. Is this fixable?
+- More headline tags ( < h2 )
+- Support for responsive images (screenshots) as alternative to HTML code listings
+- HTML5 video & audio support for screencasts & podcasts
+- Line numbering on code listings
+- Stronger semantic metadata (itemprop, property, author) for cutting-edge SEO
+- More skins with other good color schemes
 
