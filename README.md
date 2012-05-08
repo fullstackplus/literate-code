@@ -18,6 +18,7 @@ but here are some key points to keep in mind:
     of these elements at the same level.
 4. Marking up code snippets: <code>code</code> tags for inline, <code>pre code</code> for multi-line examples.
 5. As technical essays often draw on quotes from other sources, LC supports nicely formatted block quotations.
+
 Mark them up like this:
 
     <blockquote>
