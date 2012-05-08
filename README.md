@@ -18,8 +18,7 @@ but here are some key points to keep in mind:
     of these elements at the same level.
 4. Marking up code snippets: <code>code</code> tags for inline, <code>pre code</code> for multi-line examples.
 5. As technical essays often draw on quotes from other sources, LC supports nicely formatted block quotations.
-   Mark them up like this:
-
+Mark them up like this:
 
     <blockquote>
      <p>
@@ -27,7 +26,6 @@ but here are some key points to keep in mind:
      </p>
      <footer>&mdash;Anonymous on <a href="http://internet.com">The Internet</a></footer>
     </blockquote>
-
 
 6. A Table of Contents is a <code>div</code> tagged with the class <code>toc</code>. A good place for it is right after the main essay 		  				title.
 7. LC uses <a href="http://code.google.com/p/google-code-prettify/">google-code-prettify</a>
