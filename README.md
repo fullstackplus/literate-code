@@ -42,6 +42,7 @@ That's all, really. Happy blogging. Oh, and don't forget to modify the title and
 
 ###TODO:
 
+- Footnotes!
 - In-document links don't work in WebKit browsers. Is this fixable?
 - More headline tags ( < h2 )
 - Support for responsive images (screenshots) as alternative to HTML code listings
