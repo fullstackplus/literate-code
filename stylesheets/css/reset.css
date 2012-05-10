@@ -64,3 +64,10 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/* maintain text sizes for portable devices */
+html {   
+	-webkit-text-size-adjust: 100%;   
+	-ms-text-size-adjust: 100%; 
+}
+
