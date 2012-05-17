@@ -2,7 +2,7 @@
 <html lang='en'>
     <head>
         <meta charset='utf-8'>
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
         <title>Literate Code &mdash; a Responsive Prototype for a Programming Essay | Content Template</title>
         <meta name="description" content="Short Pitch of the Essay (maximum 155 characters, spaces count)" />
         <meta name="keywords" content="Valuable" />
@@ -11,7 +11,7 @@
         <script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
     </head>
     <body onload="prettyPrint()"> <!-- loads the JavaScript lexer from the google-code-prettify library -->
-        
+
         <div role="main" class="wrapper"> <!-- adjust top margin as best fits your page design (even better,
                                                set the bottom margin of the preceding element as a multiple of 13
                                                to maintain the vertical rhythm) -->
@@ -19,15 +19,25 @@
 
                 <header class="col7 text"> <!-- elements that contain text are tagged with the class "text", whether header, div, etc -->
                     <h1><a name="top"></a>Title of essay</h1>
-                    <div class="toc group"> <!-- tables of content are tagged with "toc" -->
-                        <h2>Contents</h2>
-                        <ul>
-                            <li><a href="#first-subheadline">First subheadline</a><em>/</em></li>
-                            <li><a href="#second-subheadline">Second subheadline</a></li> <!-- omit the delimiter on last menu item -->
-                        </ul>
+                    <div role="contentinfo">
+                        <div class="meta" itemscope>
+                            <p itemprop="date">Date: <time datetime='2012-05-11T00:00:00+00:00' pubdate>11 May 2012</time></p>
+                            <p itemprop="author">Author: <a href="http://jamesabbottdd.com/" title="James Abbott Design &amp; Development" rel="author">James Abbott</a></p>
+                            <p itemprop="categories" itemscope>Tags:
+                                <a class="tag" href="http://jamesabbottdd.com/programming" itemprop="category">programming</a>
+                                <a class="tag" href="http://jamesabbottdd.com/ruby" itemprop="category">ruby</a>
+                            </p>
+                        </div>
+                        <div class="toc group"> <!-- tables of content are tagged with "toc" -->
+                            <h2>Contents</h2>
+                            <ul>
+                                <li><a href="#first-subheadline">First subheadline</a><em>/</em></li>
+                                <li><a href="#second-subheadline">Second subheadline</a></li> <!-- omit the delimiter on last menu item -->
+                            </ul>
+                        </div>
                     </div>
                 </header>
-                
+
                 <div class="col7 text">
                     <p>
                         Introduction or abstract. This first paragraph will appear in bold font weight.
@@ -56,7 +66,7 @@
 5.times { puts 'Hello Literate Code!' }
                   </code></pre>
                 </div> <!-- when a "code" div is closed everything just resumes with the next "text" div: -->
-                
+
                 <div class="col7 text">
                     <p>
                         <strong>More on the topic:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -64,36 +74,57 @@
                         lorem elementum posuere interdum quis neque. Proin sagittis diam eu augue dignissim
                         adipiscing feugiat massa rhoncus. Morbi sagittis, diam euismod ornare mollis, ante arcu
                         congue enim, eget dictum metus torto vulputate nulla. Etiam feugiat sapien id nibh congue
-                        suscipit. Nam quis nulla dui. Aenean ac lorem risus. Suspendisse volutpat, magna vel
+                        suscipit.<sup id="reference-1"><a href="#footnote-1">[1]</a>
+                        </sup> Nam quis nulla dui. Aenean ac lorem risus. Suspendisse volutpat, magna vel
                         varius tempus, orci dolor gravida purus, et dapibus urna arcu nec turpis. 
                     </p>
                 </div>
-                
+
                 <div class="col7 text">
                     <h2>Second subheadline<a name="second-subheadline"></a><span class="ttp"><a href="#top"></a></span></h2>
-                        
-                        <blockquote> <!-- quote wisdom like this: -->
-                            <p>
-                                Literate Programming results in better digestion.
-                            </p>
-                            <footer>&mdash;Anonymous on <a href="http://internet.com">The Internet</a></footer>
-                        </blockquote>
 
+                    <blockquote> <!-- quote wisdom like this: -->
                         <p>
-                            <strong>Even more text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Cras libero turpis, feugiat sed scelerisque nec, tempor et justo. Proin et purus sed
-                            lorem elementum posuere interdum quis neque. Proin sagittis diam eu augue dignissim
-                            adipiscing feugiat massa rhoncus. Morbi sagittis, diam euismod ornare mollis, ante arcu
-                            congue enim, eget dictum metus torto vulputate nulla. Etiam feugiat sapien id nibh congue
-                            suscipit. Nam quis nulla dui. Aenean ac lorem risus. Suspendisse volutpat, magna vel
-                            varius tempus, orci dolor gravida purus, et dapibus urna arcu nec turpis.
-                            <span></span> <!-- put an empty "span" at the end of your last paragraph to delimit
-                                               the end of the essay in a tasteful way -->
-                       </p>
+                            Literate Programming results in better digestion.
+                        </p>
+                        <footer>&mdash;Anonymous on <a href="http://internet.com">The Internet</a></footer>
+                    </blockquote>
+
+                    <p>
+                        <strong>Even more text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras libero turpis, feugiat sed scelerisque nec, tempor et justo. Proin et purus sed
+                        lorem elementum posuere interdum quis neque.<sup id="reference-2"><a href="#footnote-2">[2]</a></sup> Proin sagittis diam eu augue dignissim
+                        adipiscing feugiat massa rhoncus. Morbi sagittis, diam euismod ornare mollis, ante arcu
+                        congue enim, eget dictum metus torto vulputate nulla. Etiam feugiat sapien id nibh congue
+                        suscipit. Nam quis nulla dui. Aenean ac lorem risus. Suspendisse volutpat, magna vel
+                        varius tempus, orci dolor gravida purus, et dapibus urna arcu nec turpis.
+                        <span></span> <!-- put an empty "span" at the end of your last paragraph to delimit
+                                           the end of the essay in a tasteful way -->
+                    </p>
                 </div>
 
+                <footer>
+                    <section class="references">
+                        <h1>References</h1> <!-- do we need this? -->
+                        <ul id="footnotes">
+                            <li id="footnote-1">
+                                <a href="#reference-1" class="footnote-backlink" title="to citation" >^</a>
+                                Bernard P. Zeigler,
+                                <a href="http://www.amazon.com/Objects-Systems-Principled-Implementations-Undergraduate/dp/0387947817" title="Objects and Systems">
+                                    Objects and Systems: Principled Design with Implementations in C++ and Java. ISBN-10: 0387947817</a>.
+                            </li>
+                            <li id="footnote-2">
+                                <a href="#reference-2" class="footnote-backlink" title="to citation" >^</a>
+                                Jon Bentley,
+                                <a href="http://www.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880/ref=sr_1_1?s=books&ie=UTF8&qid=1337184115&sr=1-1" title="Programming Pearls">
+                                    Programming Pearls. ISBN-10: 0201657880</a>.
+                            </li>
+                        </ul>
+                    </section>
+                </footer>
+                
             </article>
         </div>
-        
+
     </body>
 </html>
