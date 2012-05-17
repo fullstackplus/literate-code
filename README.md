@@ -38,16 +38,18 @@ Mark them up like this:
 
     <code>pre class="prettyprint"</code>
 
+8. Footnotes use HTML <code>sup</code> tags.
+
+9. LC wants to be strong on the SEO side, hence the inclusion of <code>rel="author"</code> and HTML Rich Snippets for content meta-data.
+
 That's all, really. Happy blogging. Oh, and don't forget to modify the title and meta tags to suit your site.
 
 ###TODO:
 
-- Footnotes!
-- In-document links don't work in WebKit browsers. Is this fixable?
-- More headline tags ( < h2 )
-- Support for responsive images (screenshots) as alternative to HTML code listings
-- HTML5 video & audio support for screencasts & podcasts
-- Line numbering on code listings
-- Stronger semantic metadata (itemprop, property, author) for cutting-edge SEO
-- More skins with other good color schemes
+In-document links don't work in WebKit browsers. Is this fixable?
+More headline tags ( < h2 )
+Support for responsive images (screenshots) as alternative to HTML code listings
+HTML5 video & audio support for screencasts & podcasts
+Line numbering on code listings
+More skins with other good color schemes
 
