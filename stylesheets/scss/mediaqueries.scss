@@ -16,8 +16,9 @@ screen and (min-device-width: 1224px) and (max-device-width: 1824px),
 screen and (min-width: 1224px) and (max-width: 1824px) {
     .debug p:after {content: "Desktop size: 1224px < width < 1824px";}
 
-    .toc {
+    div[role="contentinfo"] {
         position: absolute;
+        top: 0;
         @include width(4);
         @include left(10);
             ul li em {display: none;}
@@ -29,7 +30,7 @@ screen and (min-device-width: 1024px) and (max-device-width: 1224px),
 screen and (min-width: 1024px) and (max-width: 1224px) {
     .debug p:after {content: "Desktop size: 1024px < width < 1224px";}
 
-     .toc {
+     div[role="contentinfo"] {
         position: absolute;
         @include width(4);
         @include left(10);
@@ -43,7 +44,7 @@ screen and (min-width: 1024px) and (max-width: 1128px) {
     .debug p:after {content: "Desktop size: 1024px < width < 1128px";}
 
     .wrapper {@include width(15);}
-    .toc {
+    div[role="contentinfo"] {
         @include width(4);
         @include left(10);
             ul li em {display: none;}
@@ -56,7 +57,7 @@ screen and (min-width: 1024px) and (max-width: 1128px) {
     .wrapper {@include width(14);}
     .row>*[class^="col"].text {}
     .row>*[class^="col"].code {@include width(7);}
-    .toc {
+    div[role="contentinfo"] {
         @include width(4);
         @include left(10);
             ul li em {display: none;}
@@ -78,7 +79,7 @@ screen and (min-width: 481px) and (max-width: 1024px) {
     .prose>p, .prose>ul {@include margin-left(1);}
     blockquote {margin-left: -12px;}
 
-    .toc {
+    div[role="contentinfo"] {
         position: static;
         width: 612px;
             ul li {
@@ -116,7 +117,7 @@ screen and (min-width: 320px) and (max-width: 480px) {
         margin-bottom: 26px;
         padding: 0;
     }
-    .toc {
+    div[role="contentinfo"] {
         position: static;
         width: 396px;
             ul li {

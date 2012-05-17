@@ -116,7 +116,10 @@ blockquote {
 article > header {
   position: relative; }
 
-.toc {
+div.meta {
+  margin-bottom: 13px; }
+
+div.toc {
   padding: 5px;
   background: #ffe;
   border: 1px dashed #aaa; }

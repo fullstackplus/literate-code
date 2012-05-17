@@ -192,7 +192,10 @@ blockquote {
 article > header {
   position: relative; }
 
-.toc {
+div.meta {
+  margin-bottom: 13px; }
+
+div.toc {
   padding: 5px;
   background: #ffe;
   border: 1px dashed #aaa; }
@@ -218,21 +221,22 @@ h2 .ttp {
   .debug p:after {
     content: "Desktop size: 1224px < width < 1824px"; }
 
-  .toc {
+  div[role="contentinfo"] {
     position: absolute;
+    top: 0;
     width: 264px;
     left: 696px; }
-    .toc ul li em {
+    div[role="contentinfo"] ul li em {
       display: none; } }
 @media handheld and (min-width: 1024px) and (max-width: 1224px), screen and (min-device-width: 1024px) and (max-device-width: 1224px), screen and (min-width: 1024px) and (max-width: 1224px) {
   .debug p:after {
     content: "Desktop size: 1024px < width < 1224px"; }
 
-  .toc {
+  div[role="contentinfo"] {
     position: absolute;
     width: 264px;
     left: 696px; }
-    .toc ul li em {
+    div[role="contentinfo"] ul li em {
       display: none; } }
 @media handheld and (min-width: 1024px) and (max-width: 1128px), screen and (min-device-width: 1024px) and (max-device-width: 1128px), screen and (min-width: 1024px) and (max-width: 1128px) {
   .debug p:after {
@@ -241,10 +245,10 @@ h2 .ttp {
   .wrapper {
     width: 1056px; }
 
-  .toc {
+  div[role="contentinfo"] {
     width: 264px;
     left: 696px; }
-    .toc ul li em {
+    div[role="contentinfo"] ul li em {
       display: none; } }
 @media only screen and (min-width: 1024px) and (max-width: 1056px) {
   .debug p:after {
@@ -256,10 +260,10 @@ h2 .ttp {
   .row > *[class^="col"].code {
     width: 480px; }
 
-  .toc {
+  div[role="contentinfo"] {
     width: 264px;
     left: 696px; }
-    .toc ul li em {
+    div[role="contentinfo"] ul li em {
       display: none; } }
 /*iPads (portrait and landscape: 768px < width < 1024px)
 -------------------------------------------- */
@@ -286,12 +290,12 @@ h2 .ttp {
   blockquote {
     margin-left: -12px; }
 
-  .toc {
+  div[role="contentinfo"] {
     position: static;
     width: 612px; }
-    .toc ul li {
+    div[role="contentinfo"] ul li {
       float: left; }
-      .toc ul li em {
+      div[role="contentinfo"] ul li em {
         display: inline; } }
 /* iPads (landscape)
 -------------------------------------------- */
@@ -325,12 +329,12 @@ h2 .ttp {
     margin-bottom: 26px;
     padding: 0; }
 
-  .toc {
+  div[role="contentinfo"] {
     position: static;
     width: 396px; }
-    .toc ul li {
+    div[role="contentinfo"] ul li {
       float: left; }
-      .toc ul li em {
+      div[role="contentinfo"] ul li em {
         display: inline; } }
 /* Smartphones (landscape)
 ------------------------------------------ */

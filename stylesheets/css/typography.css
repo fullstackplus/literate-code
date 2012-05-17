@@ -152,10 +152,13 @@ article[role="main"] .toc {
     article[role="main"] .toc ul li em {
       padding: 0 5px; }
 
-article[role="main"] p:last-of-type > span {
+article[role="main"] > div p:last-of-type {
+  margin-bottom: 39px; }
+
+article[role="main"] > div p:last-of-type > span {
   display: block; }
 
-article[role="main"] p:last-of-type > span:after {
+article[role="main"] > div p:last-of-type > span:after {
   content: "\2619";
   display: block;
   font-size: 36px;
@@ -168,3 +171,55 @@ body > footer > a:hover {
 
 article#intro > p:first-child > span {
   text-transform: uppercase; }
+
+div.meta p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  margin: 0;
+  color: #444; }
+
+.row > .text[class^="col"] div.meta p {
+  text-align: left; }
+
+a.tag {
+  background: #eee;
+  padding: 0 4px 2px 4px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+a.tag:link {
+  color: #000; }
+
+a.tag:visited {
+  color: #000;
+  border: 0; }
+
+a.tag:hover {
+  border: 0;
+  background: #9C0001;
+  color: #fff; }
+
+a.footnote-backlink {
+  font-weight: bold; }
+
+sup a:hover,
+a.footnote-backlink:hover {
+  border: 0; }
+
+section.references h1 {
+  font-size: 23px;
+  line-height: 23px;
+  margin-bottom: 13px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #eee; }
+
+ul#footnotes {
+  margin-left: 12px; }
+
+ul#footnotes li {
+  list-style-type: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 13px; }
