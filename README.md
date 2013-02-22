@@ -1,9 +1,9 @@
 #Literate Code
 
 A responsive front-end toolkit for laying out programming essays.
-Look <a href="http://jamesabbottdd.com/literate-code.html">here for a demo</a>.
+Look <a href="http://jamesabbottdd.com/literate-code/demo.html">here for a demo</a>.
 
-##How to get started with LC in the shortest time possible
+##How to get started with LC:
 
 How you end up integrating LC on your site will depend on your CMS or blog engine,
 but here are some key points to keep in mind:
